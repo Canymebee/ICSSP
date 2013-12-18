@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="fill_parent" android:layout_weight="12"
+	    android:orientation="horizontal">
+         <Button
+			android:layout_width="wrap_content"
+			android:id="@+id/typebutton"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20.0dp"
+			android:layout_marginRight="10.0dip"
+			android:background="@drawable/buttonstyle"
+		    android:layout_gravity="center_vertical|center_horizontal"
+			android:text="type order"></Button>
+         <Button
+			android:layout_width="wrap_content"
+			android:id="@+id/authorbutton"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10.0dip"
+            android:background="@drawable/buttonstyle"		    
+            android:layout_gravity="center_vertical|center_horizontal"
+			android:text="author order"></Button>
+         <Button
+			android:layout_width="wrap_content"
+			android:id="@+id/importantbutton"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10.0dip"
+			android:background="@drawable/buttonstyle"
+		    android:layout_gravity="center_vertical|center_horizontal"
+			android:text="important"></Button>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" android:layout_weight="1"	    
+        android:orientation="vertical">
+        <ListView 
+		android:id="@+id/classItemListView"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:cacheColorHint="#00000000"
+		android:divider="@drawable/divider_style"
+		android:dividerHeight="1px"
+		android:fastScrollEnabled="true">
+		</ListView>
+		<View
+			android:layout_width="fill_parent"
+			android:layout_height="1.0dip">
+		</View>
+    </LinearLayout>
+     
+    
+
+</LinearLayout>
