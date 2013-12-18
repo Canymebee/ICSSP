@@ -463,32 +463,33 @@ public final class R {
     }
     public static final class drawable {
         public static final int agenda_x_icon=0x7f020000;
-        public static final int buttonstyle=0x7f020001;
-        public static final int divider_style=0x7f020002;
-        public static final int drawer_btn=0x7f020003;
-        public static final int group_bg=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int ic_menu_add=0x7f020006;
-        public static final int icon=0x7f020007;
-        public static final int importanted=0x7f020008;
-        public static final int info_x_icon=0x7f020009;
-        public static final int item_bg_style=0x7f02000a;
-        public static final int map1=0x7f02000b;
-        public static final int map2=0x7f02000c;
-        public static final int maps_x_icon=0x7f02000d;
-        public static final int news_x_icon=0x7f02000e;
-        public static final int outline_list_collapse=0x7f02000f;
-        public static final int outline_list_expand=0x7f020010;
-        public static final int papers_x_icon=0x7f020011;
-        public static final int right_arrow=0x7f020012;
-        public static final int t1=0x7f020013;
-        public static final int t2=0x7f020014;
-        public static final int t3=0x7f020015;
-        public static final int t4=0x7f020016;
-        public static final int t5=0x7f020017;
-        public static final int t6=0x7f020018;
-        public static final int t7=0x7f020019;
-        public static final int toimportant=0x7f02001a;
+        public static final int button2=0x7f020001;
+        public static final int buttonstyle=0x7f020002;
+        public static final int divider_style=0x7f020003;
+        public static final int drawer_btn=0x7f020004;
+        public static final int group_bg=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_menu_add=0x7f020007;
+        public static final int icon=0x7f020008;
+        public static final int importanted=0x7f020009;
+        public static final int info_x_icon=0x7f02000a;
+        public static final int item_bg_style=0x7f02000b;
+        public static final int map1=0x7f02000c;
+        public static final int map2=0x7f02000d;
+        public static final int maps_x_icon=0x7f02000e;
+        public static final int news_x_icon=0x7f02000f;
+        public static final int outline_list_collapse=0x7f020010;
+        public static final int outline_list_expand=0x7f020011;
+        public static final int papers_x_icon=0x7f020012;
+        public static final int right_arrow=0x7f020013;
+        public static final int t1=0x7f020014;
+        public static final int t2=0x7f020015;
+        public static final int t3=0x7f020016;
+        public static final int t4=0x7f020017;
+        public static final int t5=0x7f020018;
+        public static final int t6=0x7f020019;
+        public static final int t7=0x7f02001a;
+        public static final int toimportant=0x7f02001b;
     }
     public static final class id {
         public static final int Address_Image=0x7f090029;
@@ -519,7 +520,7 @@ public final class R {
         public static final int Papers_textview=0x7f090008;
         public static final int RelativeLayout01=0x7f090037;
         public static final int RelativeLayout02=0x7f090039;
-        public static final int action_settings=0x7f090044;
+        public static final int action_settings=0x7f090046;
         public static final int agenda_List=0x7f090019;
         public static final int agenda_address=0x7f09001e;
         public static final int agenda_fragment=0x7f090018;
@@ -529,10 +530,10 @@ public final class R {
         public static final int agenda_title=0x7f09001c;
         public static final int agenda_view_btn=0x7f09001f;
         public static final int author=0x7f09003a;
-        public static final int authorbutton=0x7f090041;
+        public static final int authorbutton=0x7f090043;
         public static final int child=0x7f09002e;
         public static final int classGroupLayout=0x7f090031;
-        public static final int classItemListView=0x7f090043;
+        public static final int classItemListView=0x7f090045;
         public static final int classPartNameLay=0x7f090032;
         public static final int class_part_id=0x7f090033;
         public static final int class_part_name=0x7f090034;
@@ -541,7 +542,7 @@ public final class R {
         public static final int icon=0x7f09002c;
         public static final int image_dialog_viewpager=0x7f090025;
         public static final int important=0x7f09003c;
-        public static final int importantbutton=0x7f090042;
+        public static final int importantbutton=0x7f090044;
         public static final int info_fragment=0x7f090020;
         public static final int linearLayout2=0x7f090036;
         public static final int list=0x7f090021;
@@ -554,11 +555,13 @@ public final class R {
         public static final int pages_text=0x7f09003e;
         public static final int papers_fragment=0x7f09003f;
         public static final int relativeLayout1=0x7f090035;
+        public static final int searchButton=0x7f090041;
+        public static final int searchInput=0x7f090040;
         public static final int text=0x7f09002d;
         public static final int text1=0x7f090023;
         public static final int title=0x7f090038;
         public static final int type=0x7f09003b;
-        public static final int typebutton=0x7f090040;
+        public static final int typebutton=0x7f090042;
         public static final int viewpager=0x7f090016;
     }
     public static final class layout {

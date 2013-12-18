@@ -28,6 +28,7 @@ public class Papers_Fragment extends Fragment{
 	private Button authorbutton=null;
 	private Button typebutton=null;
 	private Button importantbutton=null;
+	private Button searchButton=null;
 	Vector<ClassItem> data = new Vector<ClassItem>();
 	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -46,6 +47,8 @@ public class Papers_Fragment extends Fragment{
 		authorbutton=(Button) view.findViewById(R.id.authorbutton);
 		importantbutton=(Button) view.findViewById(R.id.importantbutton);
 		typebutton=(Button) view.findViewById(R.id.typebutton);
+		searchButton=(Button) view.findViewById(R.id.searchButton);
+		
 		typebutton.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -66,6 +69,16 @@ public class Papers_Fragment extends Fragment{
 			}
 			
 		});
+		searchButton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				data.removeElementAt(4);
+				addAdapterItem(data);
+			}
+			
+		});
 		authorbutton.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -77,14 +90,14 @@ public class Papers_Fragment extends Fragment{
 			
 		});
 	
-		ClassItem item1 = new ClassItem("paper1","auther1","type1",1,"type1");
-		ClassItem item2 = new ClassItem("paper2","auther2","type2",2,"type2");
-		ClassItem item3 = new ClassItem("paper3","auther3","type2",2,"type2");
-		ClassItem item4 = new ClassItem("paper4","auther1","type3",3,"type3");
-		ClassItem item5 = new ClassItem("paper5","auther5","type3",3,"type3");
-		ClassItem item6 = new ClassItem("paper6","auther6","type3",3,"type3");
-		ClassItem item7 = new ClassItem("paper7","auther7","type4",4,"type4");
-		ClassItem item8 = new ClassItem("paper8","auther8","type4",4,"type4");
+		ClassItem item1 = new ClassItem("The Challenges of Emerging Software Eco-Systems (Keynote) ","Neil G. Siegel","Keynotes",1,"Keynotes");
+		ClassItem item2 = new ClassItem("Low Ceremony Processes for Short Lifecycle Projects (Keynote) ","Anthony I. Wasserman","Keynotes",1,"Keynotes");
+		ClassItem item3 = new ClassItem("How to Treat Timing Information for Software Effort Estimation? ","Masateru Tsunoda, Sousuke Amasaki, and Chris Lokan","Estimation",2,"Estimation");
+		ClassItem item4 = new ClassItem(" qEstimation: A Process for Estimating Size and Effort of Software Testing ","Vu Nguyen, Vu Pham, and Vu Lam","Estimation",2,"Estimation");
+		ClassItem item5 = new ClassItem("A Model for Estimating Agile Project Process and Schedule Acceleration ","Dan Ingold, Barry Boehm, and Supannika Koolmanojwong","Estimation",2,"Estimation");
+		ClassItem item6 = new ClassItem(" A Discipline-Spanning Development Process for Self-Adaptive Mechatronic Systems ","Christian Heinzemann, Oliver Sudmann, Wilhelm Schäfer, and Matthias Tichy","Software Process I",3,"Software Process I");
+		ClassItem item7 = new ClassItem("A Process Practice to Validate the Quality of Reused Component Documentation: A Case Study Involving Open-Source Components ","Olivier Gendreau and Pierre N. Robillard","Quality and Indicators",4,"Quality and Indicators");
+		ClassItem item8 = new ClassItem("A Methodology to Derive Sustainability Indicators for Software Development Projects ","Giuseppe Lami, Fabrizio Fabbrini, and Mario Fusani","Quality and Indicators",4,"Quality and Indicators");
 		
 		data.addElement(item1);
 		data.addElement(item2);
