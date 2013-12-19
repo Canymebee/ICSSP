@@ -3,6 +3,7 @@ package myViews;
 import java.util.List;
 import java.util.Map;
 
+import com.activity.se_conference.Agenda_Detial;
 import com.activity.se_conference.Pages_Details;
 import com.activity.se_conference.R;
 
@@ -13,6 +14,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
+import android.text.TextPaint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +90,11 @@ public class MyAgendaListAdapter extends BaseAdapter {
 			holder.address.setVisibility(View.GONE);
 			holder.viewBtn.setVisibility(View.GONE);
 			holder.title.setText((String) mData.get(position).get("title"));
-			holder.title.setTextSize(20);
+			holder.title.setTextColor(Color.BLACK);
+		    TextPaint tp = holder.title.getPaint();   
+		    tp.setFakeBoldText(false); 
+//			holder.title.setText;
+//			holder.title.setTextSize(20);
 		}else{
 			RelativeLayout r = (RelativeLayout) convertView
 					.findViewById(R.id.agenda_layout);
@@ -97,7 +103,10 @@ public class MyAgendaListAdapter extends BaseAdapter {
 			holder.time.setVisibility(View.VISIBLE);
 			holder.address.setVisibility(View.VISIBLE);
 			holder.viewBtn.setVisibility(View.VISIBLE);
-			holder.title.setTextSize(18);
+//			holder.title.setTextSize(18);
+			holder.title.setTextColor(act.getResources().getColor(R.color.my_grey));
+			TextPaint tp = holder.title.getPaint();   
+		    tp.setFakeBoldText(true); 
 			statics = mData.get(position).get("isSelected").toString();
 			if (statics == "0") {
 				Drawable drawable = act.getResources().getDrawable(R.drawable.ic_menu_add);
@@ -129,7 +138,7 @@ public class MyAgendaListAdapter extends BaseAdapter {
 
 				@Override
 				public void onClick(View v) {
-					 Intent intent=new Intent(act,Pages_Details.class);
+					 Intent intent=new Intent(act,Agenda_Detial.class);
 					act.startActivity(intent);
 				}
 			});

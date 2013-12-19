@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/Dark_Grey">
+        
+        <Button
+            android:layout_width="wrap_content"
+       		android:layout_height="wrap_content" 
+       		android:id="@+id/Drawer_Btn"
+       		android:background="@drawable/drawer_btn"/>
+        
+        <TextView
+             android:layout_width="fill_parent"
+       		 android:layout_height="wrap_content" 
+       		 android:text="ICSSP"
+       		 android:layout_gravity="center"
+       		 style="@style/First_Class_Text"/>
+            
+        
+    </LinearLayout>
+ <TextView  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:text="The Future Of The Android" 
+        android:textSize="18sp"
+        android:id="@+id/agenda_detial_title"
+        android:background="@drawable/group_bg"
+			android:gravity="center"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agenda_detial_presenter"
+        android:text="主持人： 王二丫  李铁柱" />
+    
+<!--     <fragment
+          android:id="@+id/Google_Map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:name="com.google.android.gms.maps.MapFragment"/>
+     -->
+    
+    <TextView  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:text="papers" 
+        android:textSize="18sp"
+        android:id="@+id/agenda_detial_paper"
+        android:background="@drawable/group_bg"
+			android:gravity="center"
+        />
+
+    <ListView
+        android:id="@+id/agenda_detial_paperList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </ListView>
+
+</LinearLayout>
