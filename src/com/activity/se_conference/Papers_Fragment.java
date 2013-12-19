@@ -4,9 +4,12 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
 
+import com.activity.se_conference.R.color;
+
 import myViews.ClassItem;
 import myViews.ClassListAdapter;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -54,8 +57,11 @@ public class Papers_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				data.removeElementAt(4);
+				data.removeElementAt(0);
 				addAdapterItem(data);
+				typebutton.setBackgroundColor(Color.rgb(135, 206, 235));
+				authorbutton.setBackgroundColor(Color.WHITE);
+				importantbutton.setBackgroundColor(Color.WHITE);
 			}
 			
 		});
@@ -64,8 +70,11 @@ public class Papers_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				data.removeElementAt(4);
+				data.removeElementAt(0);
 				addAdapterItem(data);
+				typebutton.setBackgroundColor(Color.WHITE);
+				authorbutton.setBackgroundColor(Color.WHITE);
+				importantbutton.setBackgroundColor(Color.rgb(135, 206, 235));
 			}
 			
 		});
@@ -74,8 +83,9 @@ public class Papers_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				data.removeElementAt(4);
+				data.removeElementAt(0);
 				addAdapterItem(data);
+				
 			}
 			
 		});
@@ -84,8 +94,11 @@ public class Papers_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				data.removeElementAt(4);
+				data.removeElementAt(0);
 				addAdapterItem(data);
+				typebutton.setBackgroundColor(Color.WHITE);
+				authorbutton.setBackgroundColor(Color.rgb(135, 206, 235));
+				importantbutton.setBackgroundColor(Color.WHITE);
 			}
 			
 		});
