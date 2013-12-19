@@ -476,20 +476,21 @@ public final class R {
         public static final int item_bg_style=0x7f02000b;
         public static final int map1=0x7f02000c;
         public static final int map2=0x7f02000d;
-        public static final int maps_x_icon=0x7f02000e;
-        public static final int news_x_icon=0x7f02000f;
-        public static final int outline_list_collapse=0x7f020010;
-        public static final int outline_list_expand=0x7f020011;
-        public static final int papers_x_icon=0x7f020012;
-        public static final int right_arrow=0x7f020013;
-        public static final int t1=0x7f020014;
-        public static final int t2=0x7f020015;
-        public static final int t3=0x7f020016;
-        public static final int t4=0x7f020017;
-        public static final int t5=0x7f020018;
-        public static final int t6=0x7f020019;
-        public static final int t7=0x7f02001a;
-        public static final int toimportant=0x7f02001b;
+        public static final int map3=0x7f02000e;
+        public static final int maps_x_icon=0x7f02000f;
+        public static final int news_x_icon=0x7f020010;
+        public static final int outline_list_collapse=0x7f020011;
+        public static final int outline_list_expand=0x7f020012;
+        public static final int papers_x_icon=0x7f020013;
+        public static final int right_arrow=0x7f020014;
+        public static final int t1=0x7f020015;
+        public static final int t2=0x7f020016;
+        public static final int t3=0x7f020017;
+        public static final int t4=0x7f020018;
+        public static final int t5=0x7f020019;
+        public static final int t6=0x7f02001a;
+        public static final int t7=0x7f02001b;
+        public static final int toimportant=0x7f02001c;
     }
     public static final class id {
         public static final int Address_Image=0x7f090029;

@@ -117,7 +117,7 @@ public class Maps_Fragment extends Fragment{
 		// TODO Auto-generated method stub
 		//初始化两个，方便穿传进去用
 		
-		AddressImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.map1));
+		AddressImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.map3));
 		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t1));
 		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t2));
 		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t3));
@@ -126,7 +126,7 @@ public class Maps_Fragment extends Fragment{
 		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t6));
 		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t7));
 		
-		addressImages[0] = R.drawable.map2;
+		addressImages[0] = R.drawable.map3;
 		insideImages[0] = R.drawable.t1;
 		insideImages[1] = R.drawable.t2;
 		insideImages[2] = R.drawable.t3;

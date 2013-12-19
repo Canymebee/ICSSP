@@ -97,13 +97,13 @@ public class MyPopDialogForImage{
 			}
 		});
 	
-		if(BitmapWidth > BitmapHeight){
+		if(screenHeight > screenWidth){
 			dialog.setContentView(popView, 
 					new LinearLayout.LayoutParams(widthPixels,(int) (widthPixels*HeighttoWidth)));
 		}
 		else{
 			dialog.setContentView(popView, 
-					new LinearLayout.LayoutParams(heightPixels,(int) (heightPixels*WidthtoHeight)));
+					new LinearLayout.LayoutParams((int) (heightPixels*WidthtoHeight),heightPixels));
 		}
 				
 		dialog.setFeatureDrawableAlpha(Window.FEATURE_OPTIONS_PANEL, 0);

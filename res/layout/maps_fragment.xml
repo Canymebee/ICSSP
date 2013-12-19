@@ -37,13 +37,14 @@
     </LinearLayout>
     
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/map2"
-        android:scaleType="centerInside"
+        android:src="@drawable/map3"
         android:id="@+id/Address_Image"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"/>
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitStart"/>
    
     <ListView
         android:layout_width="fill_parent"
