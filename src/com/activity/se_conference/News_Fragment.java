@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.Vector;
 
 import myViews.*;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -41,6 +42,7 @@ public class News_Fragment extends Fragment{
 		
 		view=inflater.inflate(R.layout.news_fragment, container, false);
 		news=(ListView)view.findViewById(R.id.newsListView);
+		news.setPadding(20, 0, 20,0 );
 		
 		initialData();
         treeViewAdapter = new TreeViewAdapter(getActivity(), R.layout.outline,mPdfOutlinesCount);
@@ -97,8 +99,8 @@ public class News_Fragment extends Fragment{
 								}
 								
 							}else{
-								/*intent=new Intent(getActivity(),Pages_Details.class);
-								startActivity(intent);*/
+								intent=new Intent(getActivity(),Pages_Details.class);
+								startActivity(intent);
 							}
 						}
 				}
@@ -108,36 +110,30 @@ public class News_Fragment extends Fragment{
     }
 	
 	private void initialData() {
-		PDFOutlineElement pdfOutlineElement1=new PDFOutlineElement("01", "Today", false	, true, "00", 0,true);
-		PDFOutlineElement pdfOutlineElement2=new PDFOutlineElement("02", "Yesterday", false	, true, "00", 0,true);
-		PDFOutlineElement pdfOutlineElement3=new PDFOutlineElement("03", "Before", false	, true, "00", 0,true);
-		PDFOutlineElement pdfOutlineElement4=new PDFOutlineElement("04", "The location of today's meeting is at teaching's building", true	, false, "01", 1,false);
-		PDFOutlineElement pdfOutlineElement5=new PDFOutlineElement("05", "There is a meeting in afternoon", true	, false, "01", 1,false);
-		PDFOutlineElement pdfOutlineElement6=new PDFOutlineElement("06", "Please take paper and pan in today's meeting", true	, false, "02", 1,false);
-		PDFOutlineElement pdfOutlineElement7=new PDFOutlineElement("07", "The first meeting has been delayed", true	, false, "02", 1,false);
-		PDFOutlineElement pdfOutlineElement8=new PDFOutlineElement("08", "There are three meetings today", true	, false, "03", 1,false);
-		PDFOutlineElement pdfOutlineElement9=new PDFOutlineElement("09", "Good morning,there is a welcome meeting in morning", true	, false, "03", 1,false);
+		PDFOutlineElement pdfOutlineElement1=new PDFOutlineElement("01", "Recently", false	, true, "00", 0,true);
+		PDFOutlineElement pdfOutlineElement2=new PDFOutlineElement("02", "Before", false	, true, "00", 0,false);
+		PDFOutlineElement pdfOutlineElement3=new PDFOutlineElement("03", "The location of today's meeting is at teaching's building(please reach on time)", true	, false, "01", 1,false);
+		PDFOutlineElement pdfOutlineElement4=new PDFOutlineElement("04", "There is a meeting in afternoon", true	, false, "01", 1,false);
+		PDFOutlineElement pdfOutlineElement5=new PDFOutlineElement("05", "Please take paper and pan in today's meeting", true	, false, "02", 1,false);
+		PDFOutlineElement pdfOutlineElement6=new PDFOutlineElement("06", "The first meeting has been delayed", true	, false, "02", 1,false);
+		PDFOutlineElement pdfOutlineElement7=new PDFOutlineElement("07", "There are three meetings today", true	, false, "02", 1,false);
+		PDFOutlineElement pdfOutlineElement8=new PDFOutlineElement("08", "Good morning,there is a welcome meeting in morning", true	, false, "02", 1,false);
 
 		mPdfOutlinesCount.add(pdfOutlineElement1);
-		mPdfOutlinesCount.add(pdfOutlineElement4);
-		mPdfOutlinesCount.add(pdfOutlineElement5);
-		mPdfOutlinesCount.add(pdfOutlineElement2);
-		mPdfOutlinesCount.add(pdfOutlineElement6);
-		mPdfOutlinesCount.add(pdfOutlineElement7);
 		mPdfOutlinesCount.add(pdfOutlineElement3);
-		mPdfOutlinesCount.add(pdfOutlineElement8);
-		mPdfOutlinesCount.add(pdfOutlineElement9);
+		mPdfOutlinesCount.add(pdfOutlineElement4);
+		mPdfOutlinesCount.add(pdfOutlineElement2);
+	
 	
 		
 		mPdfOutlines.add(pdfOutlineElement1);
-		mPdfOutlines.add(pdfOutlineElement2);
+		mPdfOutlines.add(pdfOutlineElement3);
 		mPdfOutlines.add(pdfOutlineElement4);
+		mPdfOutlines.add(pdfOutlineElement2);
 		mPdfOutlines.add(pdfOutlineElement5);
 		mPdfOutlines.add(pdfOutlineElement6);
 		mPdfOutlines.add(pdfOutlineElement7);
-		mPdfOutlines.add(pdfOutlineElement3);
 		mPdfOutlines.add(pdfOutlineElement8);
-		mPdfOutlines.add(pdfOutlineElement9);
 
 		
 		
@@ -191,6 +187,7 @@ public class News_Fragment extends Fragment{
 			return position;
 		}
 
+		@SuppressLint("NewApi")
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			ViewHolder holder;
@@ -199,8 +196,10 @@ public class News_Fragment extends Fragment{
 				holder = new ViewHolder();
 				if(mfilelist.get(position).isMhasParent())
 					holder.text = (TextView) convertView.findViewById(R.id.child);
-				else
+				else{
 					holder.text = (TextView) convertView.findViewById(R.id.text);
+
+				}
 				holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 				convertView.setTag(holder);
 			/*} else {
@@ -208,8 +207,8 @@ public class News_Fragment extends Fragment{
 			}*/
 
 			int level = mfilelist.get(position).getLevel();
- 			holder.icon.setPadding(25 * (level + 1), holder.icon
-					.getPaddingTop(), 0, holder.icon.getPaddingBottom());
+ 			holder.icon.setPadding(25 * level, holder.icon
+					.getPaddingTop(), 0, 12);
 			holder.text.setText(mfilelist.get(position).getOutlineTitle());
 			if (mfilelist.get(position).isMhasChild()
 					&& (mfilelist.get(position).isExpanded() == false)) {
