@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 
+import com.activity.se_conference.R.color;
+
 import myViews.*;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -42,7 +44,7 @@ public class News_Fragment extends Fragment{
 		
 		view=inflater.inflate(R.layout.news_fragment, container, false);
 		news=(ListView)view.findViewById(R.id.newsListView);
-		news.setPadding(20, 0, 20,0 );
+//		news.setPadding(20, 0, 20,0 );
 		
 		initialData();
         treeViewAdapter = new TreeViewAdapter(getActivity(), R.layout.outline,mPdfOutlinesCount);
@@ -187,28 +189,33 @@ public class News_Fragment extends Fragment{
 			return position;
 		}
 
-		@SuppressLint("NewApi")
+		@SuppressLint({ "NewApi", "ResourceAsColor" })
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			ViewHolder holder;
 			/*if (convertView == null) {*/
 				convertView = mInflater.inflate(textviewresourceId, null);
 				holder = new ViewHolder();
-				if(mfilelist.get(position).isMhasParent())
+				if(mfilelist.get(position).isMhasParent()){
 					holder.text = (TextView) convertView.findViewById(R.id.child);
+					holder.text.setPadding(0, 0, 20, 0);
+					
+				}					
 				else{
 					holder.text = (TextView) convertView.findViewById(R.id.text);
-
+					convertView.setBackgroundColor(R.color.gainsboro);
+					convertView.setAlpha((float) 0.5);
 				}
 				holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 				convertView.setTag(holder);
+				
 			/*} else {
 				holder = (ViewHolder) convertView.getTag();
 			}*/
 
 			int level = mfilelist.get(position).getLevel();
- 			holder.icon.setPadding(25 * level, holder.icon
-					.getPaddingTop(), 0, 12);
+ 			holder.icon.setPadding(25 * (level+1), holder.icon
+					.getPaddingTop(), 15, 15);
 			holder.text.setText(mfilelist.get(position).getOutlineTitle());
 			if (mfilelist.get(position).isMhasChild()
 					&& (mfilelist.get(position).isExpanded() == false)) {

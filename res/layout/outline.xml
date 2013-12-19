@@ -12,7 +12,7 @@
 		android:layout_marginRight="2.0dip"
 		android:layout_alignParentTop="true" 
 		android:layout_alignParentBottom="true" 
-		android:layout_marginBottom="6.0dip" />
+		android:layout_marginBottom="8.0dip" />
 
 	<!--<TextView android:id="@+id/text" android:layout_gravity="center_vertical"
 		android:layout_weight="1.0" android:layout_height="wrap_content"
