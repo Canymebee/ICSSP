@@ -6,7 +6,10 @@ import java.util.ArrayList;
 
 
 import java.util.List;
+
+
 import myViews.PDFOutlineElement;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -202,35 +205,43 @@ public class Info_Fragment extends Fragment{
 		public long getItemId(int position) {
 			return position;
 		}
-
+		@SuppressLint({ "NewApi", "ResourceAsColor" })
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			ViewHolder holder;
 			/*if (convertView == null) {*/
-				convertView = mInflater.inflate(textviewresourceId, null);
-				holder = new ViewHolder();
-				if(mfilelist.get(position).isMhasParent())
-					holder.text = (TextView) convertView.findViewById(R.id.child);
-				else
-					holder.text = (TextView) convertView.findViewById(R.id.text);
-				holder.icon = (ImageView) convertView.findViewById(R.id.icon);
-				convertView.setTag(holder);
+			convertView = mInflater.inflate(textviewresourceId, null);
+			holder = new ViewHolder();
+			if(mfilelist.get(position).isMhasParent()){
+				holder.text = (TextView) convertView.findViewById(R.id.child);
+				holder.text.setPadding(0, 0, 20, 0);
+				
+			}					
+			else{
+				holder.text = (TextView) convertView.findViewById(R.id.text);
+				convertView.setBackgroundColor(R.color.skyblue);
+				convertView.setAlpha((float) 0.5);
+			}
+			holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+			convertView.setTag(holder);
 			/*} else {
 				holder = (ViewHolder) convertView.getTag();
 			}*/
 
-			int level = mfilelist.get(position).getLevel();
- 			holder.icon.setPadding(25 * (level + 1), holder.icon
-					.getPaddingTop(), 0, holder.icon.getPaddingBottom());
-			holder.text.setText(mfilelist.get(position).getOutlineTitle());
-			if (mfilelist.get(position).isMhasChild()
-					&& (mfilelist.get(position).isExpanded() == false)) {
-			} else if (mfilelist.get(position).isMhasChild()
-					&& (mfilelist.get(position).isExpanded() == true)) {
-			} else if (!mfilelist.get(position).isMhasChild()){
-				holder.icon.setImageBitmap(mIconCollapse);
-				holder.icon.setVisibility(View.INVISIBLE);
-			}
+				int level = mfilelist.get(position).getLevel();
+	 			holder.icon.setPadding(25 * (level+1), holder.icon
+						.getPaddingTop(), 15, 15);
+				holder.text.setText(mfilelist.get(position).getOutlineTitle());
+				if (mfilelist.get(position).isMhasChild()
+						&& (mfilelist.get(position).isExpanded() == false)) {
+					//holder.icon.setImageBitmap(mIconCollapse);
+				} else if (mfilelist.get(position).isMhasChild()
+						&& (mfilelist.get(position).isExpanded() == true)) {
+					//holder.icon.setImageBitmap(mIconExpand);
+				} else if (!mfilelist.get(position).isMhasChild()){
+					holder.icon.setImageBitmap(mIconCollapse);
+					holder.icon.setVisibility(View.INVISIBLE);
+				}
 			return convertView;
 		}
 
