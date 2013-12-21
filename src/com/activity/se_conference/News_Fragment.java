@@ -203,7 +203,7 @@ public class News_Fragment extends Fragment{
 				}					
 				else{
 					holder.text = (TextView) convertView.findViewById(R.id.text);
-					convertView.setBackgroundColor(R.color.gainsboro);
+					convertView.setBackgroundColor(android.graphics.Color.parseColor("#87CEEB"));
 					convertView.setAlpha((float) 0.5);
 				}
 				holder.icon = (ImageView) convertView.findViewById(R.id.icon);
