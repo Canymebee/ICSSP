@@ -40,6 +40,7 @@ public class MainActivity extends FragmentActivity {
 	private LinearLayout Agenda_Layout = null;
 	private LinearLayout Maps_Layout = null;
 	private LinearLayout Info_Layout = null;
+	private LinearLayout Title_Layout = null;
 	private ImageView News_underline = null;
 	private ImageView Papers_underline = null;
 	private ImageView Agenda_underline = null;
@@ -56,6 +57,7 @@ public class MainActivity extends FragmentActivity {
 	public static Resources resources;	
 	private int currentPage = 0;
 	private boolean drawer_open = false;
+	private boolean titlecolor = false;
 	@SuppressLint("UseSparseArrays")
 	Map<Integer,View> map = new HashMap<Integer,View>();
 
@@ -77,6 +79,7 @@ public class MainActivity extends FragmentActivity {
 		Agenda_Layout = (LinearLayout)findViewById(R.id.Agenda_Layout);
 		Maps_Layout = (LinearLayout)findViewById(R.id.Maps_Layout);
 		Info_Layout = (LinearLayout)findViewById(R.id.Info_Layout);
+		Title_Layout = (LinearLayout)findViewById(R.id.Title_Layout);
 		
 		News_underline = (ImageView)findViewById(R.id.News_Underline);
 		Papers_underline = (ImageView)findViewById(R.id.Papers_Underline);
@@ -178,6 +181,15 @@ public class MainActivity extends FragmentActivity {
 				else if(drawer_open){
 					MyDrawerLayout.closeDrawer(Gravity.LEFT);
 					drawer_open = false;
+				}
+				
+				if(!titlecolor){
+					Title_Layout.setBackgroundColor(getResources().getColor(R.color.Blue_Color));
+					titlecolor = true;
+				}
+				else if(titlecolor){
+					Title_Layout.setBackgroundColor(getResources().getColor(R.color.Dark_Grey));
+					titlecolor = false;
 				}
 				
 				

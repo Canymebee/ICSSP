@@ -26,6 +26,13 @@ public class ClassItem implements Serializable{
 	public void setType(String type) {
 		this.type = type;
 	}
+	public String getMarkup() {
+		return markup;
+	}
+
+	public void setMarkup(String markup) {
+		this.markup = markup;
+	}
 	private static final long serialVersionUID = 1L;
 	
 	private String title = "";
@@ -33,14 +40,16 @@ public class ClassItem implements Serializable{
 	private String partName = "";
 	private String author = "";
 	private String type = "";
+	private String markup = "";
 	private boolean ifTop = false;
 	
 	public ClassItem() {
 		super();
 	}
 	
-	public ClassItem(String title,String author,String type, int partId,String partName) {
+	public ClassItem(String markup,String title,String author,String type, int partId,String partName) {
 		super();
+		this.markup=markup;
 		this.title = title;
 		this.partId = partId;
 		this.author=author;

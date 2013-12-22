@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class Maps_Fragment extends Fragment{
 	private ImageView LocationImage;
 	private TextView AddressTextView;
 	private TextView LocationTextView;
+	private LinearLayout MeetingLayout;
 	private ListView ImageList;
 	private ArrayList<Bitmap> InsideImages = new ArrayList<Bitmap>();
 	private ArrayList<Bitmap> AddressImages = new ArrayList<Bitmap>();
@@ -39,7 +41,7 @@ public class Maps_Fragment extends Fragment{
 		AddressTextView = (TextView) view.findViewById(R.id.Address_TextView);
 		LocationTextView = (TextView) view.findViewById(R.id.Location_TextView);
 		ImageList = (ListView)view.findViewById(R.id.Image_List);
-		
+		MeetingLayout = (LinearLayout)view.findViewById(R.id.MeetingAddressLayout);		
 		InitImagesAndArray();
 		
 /*			bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test5));
@@ -74,9 +76,9 @@ public class Maps_Fragment extends Fragment{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				AddressImage.setVisibility(View.VISIBLE);
+				MeetingLayout.setVisibility(View.VISIBLE);
 				ImageList.setVisibility(View.GONE);
-				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Dark_Grey));
+				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Blue_Color));
 				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));
 			/*	if(isAddressImageVisible){
 					AddressImage.setVisibility(View.GONE);
@@ -94,10 +96,10 @@ public class Maps_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				AddressImage.setVisibility(View.GONE);
+				MeetingLayout.setVisibility(View.GONE);
 				ImageList.setVisibility(View.VISIBLE);
 				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));
-				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Dark_Grey));
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Blue_Color));
 			/*	if(isLocationImageVisble){
 					ImageList.setVisibility(View.GONE);
 					isLocationImageVisble = false;
