@@ -89,25 +89,25 @@ public class Agenda_Fragment extends Fragment {
 		
 		map = new HashMap<String, Object>();
 		map.put("isTitle", "0");
-		map.put("title", "开幕式");
+		map.put("title", "Opening Ceremony");
 		map.put("time", "08:00-09:00");
-		map.put("address", "南京大学食堂1楼");
+		map.put("address", "the first floor of Nanjing university dining room");
 		map.put("isSelected", "0");
 		list.add(map);
 
 		map = new HashMap<String, Object>();
 		map.put("isTitle", "0");
-		map.put("title", "会议1");
+		map.put("title", "The Future of the Android");
 		map.put("time", "10:00-11:00");
-		map.put("address", "南京大学食堂2楼");
+		map.put("address", "the second floor of Nanjing university dining room");
 		map.put("isSelected", "0");
 		list.add(map);
 
 		map = new HashMap<String, Object>();
 		map.put("isTitle", "0");
-		map.put("title", "会议2");
+		map.put("title", "3D and Android");
 		map.put("time", "14:00-16:00");
-		map.put("address", "南京大学食堂3楼");
+		map.put("address", "the ground of Nanjing university");
 		map.put("isSelected", "0");
 		list.add(map);
 		
@@ -121,25 +121,33 @@ public class Agenda_Fragment extends Fragment {
 		
 		map = new HashMap<String, Object>();
 		map.put("isTitle", "0");
-		map.put("title", "开幕式");
+		map.put("title", "Android Change the World");
 		map.put("time", "08:00-09:00");
-		map.put("address", "南京大学食堂1楼");
+		map.put("address", "Classroom A");
 		map.put("isSelected", "0");
 		list.add(map);
 
 		map = new HashMap<String, Object>();
 		map.put("isTitle", "0");
-		map.put("title", "会议1");
+		map.put("title", "Iphone is Better than Android?");
 		map.put("time", "10:00-11:00");
-		map.put("address", "南京大学食堂2楼");
+		map.put("address", "who knows");
 		map.put("isSelected", "0");
 		list.add(map);
 
 		map = new HashMap<String, Object>();
 		map.put("isTitle", "0");
-		map.put("title", "会议2");
+		map.put("title", "bala~bala~bala~bala");
 		map.put("time", "14:00-16:00");
-		map.put("address", "南京大学食堂3楼");
+		map.put("address", "forget...");
+		map.put("isSelected", "0");
+		list.add(map);
+		
+		map = new HashMap<String, Object>();
+		map.put("isTitle", "0");
+		map.put("title", "bala~bala~bala~bala");
+		map.put("time", "14:00-16:00");
+		map.put("address", "the address can be long and long and long and long and long and long ");
 		map.put("isSelected", "0");
 		list.add(map);
 		

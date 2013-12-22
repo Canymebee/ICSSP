@@ -25,6 +25,7 @@
         <activity
             android:name="Pages_Details"></activity>
         <activity android:name="Previous_conference"></activity>
+        <activity android:name="Agenda_Detial"></activity>
     </application>
 
 </manifest>
