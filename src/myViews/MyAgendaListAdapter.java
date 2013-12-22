@@ -24,7 +24,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-//@SuppressLint("ResourceAsColor")
+
 public class MyAgendaListAdapter extends BaseAdapter {
 	private Activity act;
 	private String statics;
@@ -82,9 +82,9 @@ public class MyAgendaListAdapter extends BaseAdapter {
 		if(mData.get(position).get("isTitle").toString()=="1"){
 			RelativeLayout r = (RelativeLayout) convertView
 					.findViewById(R.id.agenda_layout);
-			Drawable drawable = act.getResources().getDrawable(R.drawable.group_bg);
-			r.setBackground(drawable);
-			//r.setBackgroundColor(act.getResources().getColor(R.color.Dark_Grey));
+//			Drawable drawable = act.getResources().getDrawable(R.drawable.img01);
+//			r.setBackground(drawable);
+			r.setBackgroundColor(act.getResources().getColor(R.color.skyblue));
 			holder.addBtn.setVisibility(View.GONE);
 			holder.time.setVisibility(View.GONE);
 			holder.address.setVisibility(View.GONE);

@@ -4,6 +4,7 @@
 	android:orientation="horizontal" 
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
+	android:paddingTop="6sp"
 	android:background="@color/white">
 
 	<Button android:id="@+id/agenda_notice"
@@ -23,7 +24,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
 			android:text="会议的名字可以很长很长"
-			android:textSize="20sp" 
+			android:textSize="18sp" 
 			android:textColor="#666666"
 			/>
 			<LinearLayout android:orientation="horizontal"

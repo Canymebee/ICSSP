@@ -30,12 +30,14 @@
         android:text="The Future Of The Android" 
         android:textSize="18sp"
         android:id="@+id/agenda_detial_title"
-        android:background="@drawable/group_bg"
+        android:background="@color/skyblue"
+        android:paddingTop="6sp"
 			android:gravity="center"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/agenda_detial_presenter"
+        android:layout_marginTop="6sp"
         android:text="主持人： 王二丫  李铁柱" />
     
 <!--     <fragment
@@ -51,7 +53,9 @@
         android:text="papers" 
         android:textSize="18sp"
         android:id="@+id/agenda_detial_paper"
-        android:background="@drawable/group_bg"
+        android:background="@color/skyblue"
+        android:layout_marginTop="6sp"
+        android:paddingTop="6sp"
 			android:gravity="center"
         />
 
