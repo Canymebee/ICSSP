@@ -13,7 +13,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/Dark_Grey">
+        android:background="@color/Dark_Grey"
+        android:id="@+id/Title_Layout">
         
         <Button
             android:layout_width="wrap_content"
@@ -196,6 +197,11 @@
 		    	        android:layout_width="fill_parent"
 		    	        android:layout_height="2dip"
 		    	        android:background="@color/Blue_Color"/>
+	    
+	    <ImageView 
+	        android:layout_width="fill_parent"
+		    android:layout_height="2dip"
+		   	android:background="@color/Light_Grey"/>
 	    
 	    <android.support.v4.view.ViewPager
 	        android:id="@+id/viewpager"

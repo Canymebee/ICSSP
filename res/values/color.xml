@@ -2,7 +2,12 @@
 <resources>
 <color name="Dark_Grey">#a6aca9</color>
 <color name="Light_Grey">#e3e9e3</color>
-<color name="Blue_Color">#33b5e5</color>
+<color name="Blue_Color">#ADD8E6</color><!-- 我现在下划线用的bluecolor,其实就是lightblue -->
+<color name="Dark_Blue">#33b5e5</color>
+<color name="lightskyblue">#87CEFA</color><!--亮天蓝色 -->
+<color name="lightblue">#ADD8E6</color><!--亮蓝色 -->
+<color name="skyblue">#87CEEB</color><!--天蓝色 -->
+
 
 <color name="white">#FFFFFF</color><!--白色 -->
 <color name="ivory">#FFFFF0</color><!--象牙色 -->
@@ -81,7 +86,7 @@
 <color name="lightsteelblue">#B0C4DE</color><!--亮钢兰色 -->
 <color name="paleturquoise">#AFEEEE</color><!--苍宝石绿 -->
 <color name="greenyellow">#ADFF2F</color><!--黄绿色 -->
-<color name="lightblue">#ADD8E6</color><!--亮蓝色 -->
+
 <color name="darkgray">#A9A9A9</color><!--暗灰色 -->
 <color name="darkgrey">#A9A9A9</color><!--暗灰色 -->
 <color name="brown">#A52A2A</color><!--褐色 -->
@@ -96,8 +101,8 @@
 <color name="darkmagenta">#8B008B</color><!--暗洋红 -->
 <color name="darkred">#8B0000</color><!--暗红色 -->
 <color name="blueviolet">#8A2BE2</color><!--紫罗兰蓝色 -->
-<color name="lightskyblue">#87CEFA</color><!--亮天蓝色 -->
-<color name="skyblue">#87CEEB</color><!--天蓝色 -->
+
+
 <color name="gray">#808080</color><!--灰色 -->
 <color name="grey">#808080</color><!--灰色 -->
 <color name="olive">#808000</color><!--橄榄色 -->
