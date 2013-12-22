@@ -72,6 +72,7 @@ public class ClassListAdapter extends BaseAdapter {
 			holder = new ViewHolder();
 			holder.partLayout = (LinearLayout)convertView.findViewById(R.id.classGroupLayout);
 			holder.partId = (TextView) convertView.findViewById(R.id.class_part_id);
+			holder.markup = (TextView) convertView.findViewById(R.id.markup);
 			holder.partName = (TextView) convertView.findViewById(R.id.class_part_name);
 			holder.title = (TextView) convertView.findViewById(R.id.title);
 			holder.author = (TextView) convertView.findViewById(R.id.author);
@@ -108,12 +109,14 @@ public class ClassListAdapter extends BaseAdapter {
 			if(classItem.getIfTop()){
 				holder.partLayout.setVisibility(View.VISIBLE);
 				holder.partName.setText(classItem.getPartName());
+				holder.markup.setText(classItem.getMarkup());
 				holder.title.setText(classItem.getTitle());
 				holder.author.setText(classItem.getAuthor());
 				holder.type.setText(classItem.getType());
 			}else{
 				holder.partLayout.setVisibility(View.GONE);
 				holder.partName.setText(classItem.getPartName());
+				holder.markup.setText(classItem.getMarkup());
 				holder.title.setText(classItem.getTitle());
 				holder.author.setText(classItem.getAuthor());
 				holder.type.setText(classItem.getType());
@@ -126,6 +129,7 @@ public class ClassListAdapter extends BaseAdapter {
 	public class ViewHolder {
 		LinearLayout partLayout;
 		TextView partId;
+		TextView markup;
 		TextView partName;
 		TextView title;
 		TextView author;
