@@ -204,7 +204,6 @@ public class News_Fragment extends Fragment{
 				else{
 					holder.text = (TextView) convertView.findViewById(R.id.text);
 					convertView.setBackgroundColor(android.graphics.Color.parseColor("#33b5e5"));
-					convertView.setAlpha((float) 0.5);
 				}
 				holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 				convertView.setTag(holder);
