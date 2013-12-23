@@ -23,6 +23,8 @@ import android.widget.TextView;
 public class Maps_Fragment extends Fragment{
 	private ImageView AddressImage;
 	private ImageView LocationImage;
+	private ImageView AddresssIcon;
+	private ImageView LocationIcon;
 	private TextView AddressTextView;
 	private TextView LocationTextView;
 	private LinearLayout MeetingLayout;
@@ -31,12 +33,16 @@ public class Maps_Fragment extends Fragment{
 	private ArrayList<Bitmap> AddressImages = new ArrayList<Bitmap>();
 	private int[] insideImages = new int[7];
 	private int[] addressImages = new int[1];
+	private boolean isAddressImageVisible = false;
+	private boolean isLocationImageVisble = false;
 	
 	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
     		Bundle savedInstanceState) {  
 		View view = inflater.inflate(R.layout.maps_fragment, container, false);
 		AddressImage = (ImageView) view.findViewById(R.id.Address_Image);
+		AddresssIcon = (ImageView)view.findViewById(R.id.Address_Icon);
+		LocationIcon = (ImageView)view.findViewById(R.id.Location_Icon);
 /*		LocationImage = (ImageView) view.findViewById(R.id.Location_Image);*/
 		AddressTextView = (TextView) view.findViewById(R.id.Address_TextView);
 		LocationTextView = (TextView) view.findViewById(R.id.Location_TextView);
@@ -76,18 +82,22 @@ public class Maps_Fragment extends Fragment{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				MeetingLayout.setVisibility(View.VISIBLE);
+/*				MeetingLayout.setVisibility(View.VISIBLE);
 				ImageList.setVisibility(View.GONE);
 				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Blue_Color));
-				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));
-			/*	if(isAddressImageVisible){
-					AddressImage.setVisibility(View.GONE);
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));*/
+				if(isAddressImageVisible){
+					MeetingLayout.setVisibility(View.GONE);
+					AddresssIcon.setImageDrawable(
+							getResources().getDrawable(R.drawable.outline_list_collapse));
 					isAddressImageVisible = false;
 				}
 				else if(!isAddressImageVisible){
-					AddressImage.setVisibility(View.VISIBLE);
+					MeetingLayout.setVisibility(View.VISIBLE);
+					AddresssIcon.setImageDrawable(
+							getResources().getDrawable(R.drawable.outline_list_expand));
 					isAddressImageVisible = true;
-				}*/
+				}
 			}
 		});
 			
@@ -96,18 +106,22 @@ public class Maps_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				MeetingLayout.setVisibility(View.GONE);
+/*				MeetingLayout.setVisibility(View.GONE);
 				ImageList.setVisibility(View.VISIBLE);
 				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));
-				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Blue_Color));
-			/*	if(isLocationImageVisble){
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Blue_Color));*/
+				if(isLocationImageVisble){
 					ImageList.setVisibility(View.GONE);
+					LocationIcon.setImageDrawable(
+							getResources().getDrawable(R.drawable.outline_list_collapse));
 					isLocationImageVisble = false;
 				}
 				else if(!isLocationImageVisble){
 					ImageList.setVisibility(View.VISIBLE);
+					LocationIcon.setImageDrawable(
+							getResources().getDrawable(R.drawable.outline_list_expand));
 					isLocationImageVisble = true;
-				}*/
+				}
 			}
 		});
 			

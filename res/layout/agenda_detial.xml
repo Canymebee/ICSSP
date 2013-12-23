@@ -30,7 +30,7 @@
         android:text="The Future Of The Android" 
         android:textSize="18sp"
         android:id="@+id/agenda_detial_title"
-        android:background="@color/skyblue"
+        android:background="@color/Blue_Color"
         android:paddingTop="6sp"
 			android:gravity="center"/>
     <TextView
@@ -53,7 +53,7 @@
         android:text="papers" 
         android:textSize="18sp"
         android:id="@+id/agenda_detial_paper"
-        android:background="@color/skyblue"
+        android:background="@color/Blue_Color"
         android:layout_marginTop="6sp"
         android:paddingTop="6sp"
 			android:gravity="center"

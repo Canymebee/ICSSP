@@ -12,7 +12,7 @@ public final class R {
     }
     public static final class color {
         public static final int Blue_Color=0x7f040002;
-        /**  我现在下划线用的bluecolor,其实就是lightblue 
+        /**  最好统一都用这个吧 
          */
         public static final int Dark_Blue=0x7f040003;
         public static final int Dark_Grey=0x7f040000;
@@ -501,20 +501,22 @@ public final class R {
         public static final int toimportant=0x7f02001e;
     }
     public static final class id {
+        public static final int Address_Icon=0x7f09002c;
         public static final int Address_Image=0x7f09002f;
-        public static final int Address_TextView=0x7f09002c;
+        public static final int Address_TextView=0x7f09002d;
         public static final int Agenda_Image=0x7f09000c;
         public static final int Agenda_Layout=0x7f09000b;
         public static final int Agenda_Underline=0x7f09000e;
         public static final int Agenda_textview=0x7f09000d;
         public static final int Drawer_Btn=0x7f090001;
-        public static final int Image_List=0x7f090030;
+        public static final int Image_List=0x7f090032;
         public static final int Info_Image=0x7f090014;
         public static final int Info_Layout=0x7f090013;
         public static final int Info_Underline=0x7f090016;
         public static final int Info_textview=0x7f090015;
-        public static final int ListImage=0x7f090031;
-        public static final int Location_TextView=0x7f09002d;
+        public static final int ListImage=0x7f090033;
+        public static final int Location_Icon=0x7f090030;
+        public static final int Location_TextView=0x7f090031;
         public static final int Maps_Image=0x7f090010;
         public static final int Maps_Layout=0x7f09000f;
         public static final int Maps_Underline=0x7f090012;
@@ -528,10 +530,10 @@ public final class R {
         public static final int Papers_Layout=0x7f090007;
         public static final int Papers_Underline=0x7f09000a;
         public static final int Papers_textview=0x7f090009;
-        public static final int RelativeLayout01=0x7f09003d;
-        public static final int RelativeLayout02=0x7f090040;
+        public static final int RelativeLayout01=0x7f09003f;
+        public static final int RelativeLayout02=0x7f090042;
         public static final int Title_Layout=0x7f090000;
-        public static final int action_settings=0x7f09004d;
+        public static final int action_settings=0x7f09004f;
         public static final int agenda_List=0x7f09001e;
         public static final int agenda_address=0x7f090023;
         public static final int agenda_detial_paper=0x7f09001c;
@@ -544,40 +546,40 @@ public final class R {
         public static final int agenda_time=0x7f090022;
         public static final int agenda_title=0x7f090021;
         public static final int agenda_view_btn=0x7f090024;
-        public static final int author=0x7f090041;
-        public static final int authorbutton=0x7f09004a;
-        public static final int child=0x7f090034;
-        public static final int classGroupLayout=0x7f090037;
-        public static final int classItemListView=0x7f09004c;
-        public static final int classPartNameLay=0x7f090038;
-        public static final int class_part_id=0x7f090039;
-        public static final int class_part_name=0x7f09003a;
+        public static final int author=0x7f090043;
+        public static final int authorbutton=0x7f09004c;
+        public static final int child=0x7f090036;
+        public static final int classGroupLayout=0x7f090039;
+        public static final int classItemListView=0x7f09004e;
+        public static final int classPartNameLay=0x7f09003a;
+        public static final int class_part_id=0x7f09003b;
+        public static final int class_part_name=0x7f09003c;
         public static final int drawer=0x7f090018;
         public static final int drawer_layout=0x7f090002;
-        public static final int icon=0x7f090032;
+        public static final int icon=0x7f090034;
         public static final int image_dialog_viewpager=0x7f09002a;
-        public static final int important=0x7f090043;
-        public static final int importantbutton=0x7f09004b;
+        public static final int important=0x7f090045;
+        public static final int importantbutton=0x7f09004d;
         public static final int info_fragment=0x7f090025;
-        public static final int linearLayout2=0x7f09003c;
+        public static final int linearLayout2=0x7f09003e;
         public static final int list=0x7f090026;
         public static final int list_item=0x7f090027;
         public static final int maps_fragment=0x7f090029;
-        public static final int markup=0x7f09003e;
+        public static final int markup=0x7f090040;
         public static final int movearea_pointarea=0x7f09002b;
-        public static final int newsListView=0x7f090036;
-        public static final int news_fragment=0x7f090035;
-        public static final int pages_details_linearlayout=0x7f090044;
-        public static final int pages_text=0x7f090045;
-        public static final int papers_fragment=0x7f090046;
-        public static final int relativeLayout1=0x7f09003b;
-        public static final int searchButton=0x7f090048;
-        public static final int searchInput=0x7f090047;
-        public static final int text=0x7f090033;
+        public static final int newsListView=0x7f090038;
+        public static final int news_fragment=0x7f090037;
+        public static final int pages_details_linearlayout=0x7f090046;
+        public static final int pages_text=0x7f090047;
+        public static final int papers_fragment=0x7f090048;
+        public static final int relativeLayout1=0x7f09003d;
+        public static final int searchButton=0x7f09004a;
+        public static final int searchInput=0x7f090049;
+        public static final int text=0x7f090035;
         public static final int text1=0x7f090028;
-        public static final int title=0x7f09003f;
-        public static final int type=0x7f090042;
-        public static final int typebutton=0x7f090049;
+        public static final int title=0x7f090041;
+        public static final int type=0x7f090044;
+        public static final int typebutton=0x7f09004b;
         public static final int viewpager=0x7f090017;
     }
     public static final class layout {
