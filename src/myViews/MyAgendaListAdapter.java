@@ -96,7 +96,7 @@ public class MyAgendaListAdapter extends BaseAdapter {
 		    TextPaint tp = holder.title.getPaint();   
 		    tp.setFakeBoldText(false); 
 //			holder.title.setText;
-//			holder.title.setTextSize(20);
+			holder.title.setTextSize(20);
 		}else{
 //			RelativeLayout r = (RelativeLayout) convertView
 //					.findViewById(R.id.agenda_layout);
@@ -105,17 +105,17 @@ public class MyAgendaListAdapter extends BaseAdapter {
 			holder.time.setVisibility(View.VISIBLE);
 			holder.address.setVisibility(View.VISIBLE);
 			holder.viewBtn.setVisibility(View.VISIBLE);
-//			holder.title.setTextSize(18);
+			holder.title.setTextSize(15);
 			holder.title.setTextColor(c.getResources().getColor(R.color.my_grey));
 			TextPaint tp = holder.title.getPaint();   
 		    tp.setFakeBoldText(true); 
 			statics = mData.get(position).get("isSelected").toString();
 			if (statics == "0") {
-				Drawable drawable = convertView.getResources().getDrawable(R.drawable.ic_menu_add);
+				Drawable drawable = convertView.getResources().getDrawable(R.drawable.toimportant);
 //				holder.addBtn.setBackground(drawable);
 				holder.addBtn.setBackgroundDrawable(drawable);
 			} else if(statics=="1"){
-				Drawable drawable = c.getResources().getDrawable(R.drawable.star3);
+				Drawable drawable = c.getResources().getDrawable(R.drawable.importanted);
 //				holder.addBtn.setBackground();
 				holder.addBtn.setBackgroundDrawable(drawable);
 			}
@@ -128,12 +128,12 @@ public class MyAgendaListAdapter extends BaseAdapter {
 				@Override
 				public void onClick(View v) {
 					if (statics == "0") {
-						Drawable drawable = c.getResources().getDrawable(R.drawable.star3);
+						Drawable drawable = c.getResources().getDrawable(R.drawable.importanted);
 //						holder.addBtn.setBackground(drawable);
 						holder.addBtn.setBackgroundDrawable(drawable);
 						statics = "1";
 					} else if(statics=="1"){
-						Drawable drawable = c.getResources().getDrawable(R.drawable.ic_menu_add);
+						Drawable drawable = c.getResources().getDrawable(R.drawable.toimportant);
 //						holder.addBtn.setBackground(drawable);
 						holder.addBtn.setBackgroundDrawable(drawable);
 						statics = "0";

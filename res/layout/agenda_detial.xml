@@ -28,7 +28,8 @@
         android:layout_width="fill_parent"  
         android:layout_height="wrap_content"  
         android:text="The Future Of The Android" 
-        android:textSize="18sp"
+        
+        style="@style/Page_Title"
         android:id="@+id/agenda_detial_title"
         android:background="@color/Blue_Color"
         android:paddingTop="6sp"
@@ -51,7 +52,8 @@
         android:layout_width="fill_parent"  
         android:layout_height="wrap_content"  
         android:text="papers" 
-        android:textSize="18sp"
+        
+        style="@style/Page_Title"
         android:id="@+id/agenda_detial_paper"
         android:background="@color/Blue_Color"
         android:layout_marginTop="6sp"

@@ -11,7 +11,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginLeft="15px"
-		android:background="@drawable/ic_menu_add"
+		android:background="@drawable/toimportant"
 		android:layout_centerVertical="true"/>
 	<LinearLayout android:orientation="vertical"
 		android:layout_width="wrap_content" 
@@ -24,7 +24,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
 			android:text="会议的名字可以很长很长"
-			style="@style/Second_Class_Text"
+			style="@style/Page_Info_First"
 			/>
 			<LinearLayout android:orientation="horizontal"
 		android:layout_width="wrap_content" 
