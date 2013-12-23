@@ -4,6 +4,9 @@
 <color name="Light_Grey">#e3e9e3</color>
 <color name="Blue_Color">#87CEEB</color><!-- 最好统一都用这个吧 --> 
 <color name="Dark_Blue">#33b5e5</color>
+<color name="PageInfo_First">#666666</color>
+<color name="PageText">#333333</color>
+
 <color name="lightskyblue">#87CEFA</color><!--亮天蓝色 -->
 <color name="lightblue">#ADD8E6</color><!--亮蓝色 -->
 <color name="skyblue">#87CEEB</color><!--天蓝色 -->

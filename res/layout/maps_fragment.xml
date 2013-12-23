@@ -27,7 +27,7 @@
 		        android:paddingLeft="8dp"
 		        android:paddingTop="2dp"
 		        android:paddingBottom="2dp"
-		        style="@style/Second_Class_Text"/>
+		        style="@style/Page_Title"/>
     	    
     	</LinearLayout>
         
@@ -84,7 +84,7 @@
 		        android:paddingLeft="8dp"
 		        android:paddingTop="2dp"
 		        android:paddingBottom="2dp"
-		        style="@style/Second_Class_Text" />
+		        style="@style/Page_Title" />
         </LinearLayout>
    		
    
