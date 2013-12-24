@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import data.TableManager;
 import myViews.MyAgendaListAdapter;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,7 +36,10 @@ public class Agenda_Fragment extends Fragment {
 				.inflate(R.layout.agenda_fragment, container, false);
 //		MondayTextView = (TextView) view.findViewById(R.id.agenda_Mon);
 		agendaList = (ListView) view.findViewById(R.id.agenda_List);
-		agendaList.setAdapter(new MyAgendaListAdapter(getActivity(), getData()));
+//		TableManager t=new TableManager(getActivity());
+//		t.createPaperTable();
+//		t.createAgendaTable();
+		agendaList.setAdapter(new MyAgendaListAdapter(getActivity()));
 
 //		MondayTextView.setOnClickListener(new View.OnClickListener() {
 //

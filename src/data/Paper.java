@@ -2,26 +2,20 @@ package data;
 
 public class Paper {
 	
-	private String id,title,author;	
-	private boolean is_selected;
-	
-	public Paper(String id,String title,String author,int is_selected){
-		//is_selected=0则为假，否则为真，因为数据库中没有boolean类型
-		this.id=id;
-		this.title=title;
-		this.author=author;
-		if(is_selected==0){
-			this.is_selected=false;
-		}else
-			this.is_selected=true;
-	}
-	
-	public String getId() {
-		return id;
+	public String getConID() {
+		return conID;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setConID(String conID) {
+		this.conID = conID;
+	}
+
+	public int getIfPrefered() {
+		return ifPrefered;
+	}
+
+	public void setIfPrefered(int ifPrefered) {
+		this.ifPrefered = ifPrefered;
 	}
 
 	public String getTitle() {
@@ -40,13 +34,42 @@ public class Paper {
 		this.author = author;
 	}
 
-	public boolean isIs_selected() {
-		return is_selected;
+	public String getType() {
+		return type;
 	}
 
-	public void setIs_selected(boolean is_selected) {
-		this.is_selected = is_selected;
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getMarkup() {
+		return markup;
 	}
 
+	public void setMarkup(String markup) {
+		this.markup = markup;
+	}
+	private static final long serialVersionUID = 1L;
+	private String markup = "";
+	private String title = "";
+	private String author = "";
+	private String type = "";
+	private String conID = "";
+	private int ifPrefered = 0;
+	
+	
+	public Paper() {
+		super();
+	}
+	
+	public Paper(String markup,String title,String author,String type, String conID,int ifPrefered) {
+		super();
+		this.markup=markup;
+		this.title = title;
+		this.author=author;
+		this.type=type;
+		this.conID=conID;
+		this.ifPrefered=ifPrefered;
+	}
+	
 	
 }

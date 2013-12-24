@@ -24,7 +24,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
 			android:text="会议的名字可以很长很长"
-			style="@style/Page_Info_First"
+			android:textSize="20sp"
 			/>
 			<LinearLayout android:orientation="horizontal"
 		android:layout_width="wrap_content" 

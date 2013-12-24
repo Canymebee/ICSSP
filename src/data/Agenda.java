@@ -4,8 +4,17 @@ public class Agenda {
 	
 	private String id,title,time,address;
 	private boolean is_selected;
+	private boolean is_title;
 	
-	public Agenda(String id,String title,String time,String address,int is_selected){
+	public boolean isIs_title() {
+		return is_title;
+	}
+
+	public void setIs_title(boolean is_title) {
+		this.is_title = is_title;
+	}
+
+	public Agenda(String id,String title,String time,String address,int is_selected,int is_title){
 		//is_selected=0则为假，否则为真，因为数据库中没有boolean类型
 		this.id=id;
 		this.title=title;
@@ -13,8 +22,14 @@ public class Agenda {
 		this.address=address;
 		if(is_selected==0){
 			this.is_selected=false;
-		}else
+		}else{
 			this.is_selected=true;
+		}
+		if(is_title==0){
+			this.is_title=false;
+		}else{
+			this.is_title=true;
+		}
 	}
 	
 	public String getId() {

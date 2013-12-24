@@ -1,12 +1,14 @@
-
 package com.activity.se_conference;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
 
 import com.activity.se_conference.R.color;
 
+import data.Paper;
+import data.TableManager;
 import myViews.ClassItem;
 import myViews.ClassListAdapter;
 import android.content.Intent;
@@ -28,18 +30,29 @@ public class Papers_Fragment extends Fragment{
 	private ClassListAdapter classListAdapter;
 	private View view=null;
 	ViewGroup container=null;
+	public static int times  = 0;
+	public static int isPre  = 0;
+	TableManager tableManager=null;
+	ArrayList<Paper> papers=null;
 	LayoutInflater inflater=null;
 	private Button authorbutton=null;
 	private Button typebutton=null;
 	private Button importantbutton=null;
 	private Button searchButton=null;
-	Vector<ClassItem> data = new Vector<ClassItem>();
+	private Button paperButton=null;
+	public static Vector<ClassItem> data = new Vector<ClassItem>();
+	Vector<ClassItem> data2 = new Vector<ClassItem>();
 	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
     		Bundle savedInstanceState) {  
 		this.container=container;
 		this.inflater=inflater;
 		view=inflater.inflate(R.layout.papers_fragment, container, false);
+		tableManager=new TableManager(this.getActivity());
+		/*if(times==0){
+			times=1;
+			tableManager.createPaperTable();
+		}*/
 		initView();
         return  view; 
     }
@@ -52,17 +65,72 @@ public class Papers_Fragment extends Fragment{
 		importantbutton=(Button) view.findViewById(R.id.importantbutton);
 		typebutton=(Button) view.findViewById(R.id.typebutton);
 		searchButton=(Button) view.findViewById(R.id.searchButton);
+		paperButton=(Button) view.findViewById(R.id.paperbutton);
+		//papers=tableManager.queryPaper();
 		
 		typebutton.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				data.removeElementAt(0);
+				isPre=0;
+				ClassItem item=null;
+				String typenam="";
+				int typei=0;
+				for(int i=0;i<data.size();i++){
+					item=data.get(i);
+					String nam=item.getType();
+					if(nam.equals(typenam)){
+						item.setPartId(typei);
+						item.setPartName(typenam);
+					}
+					else{
+						typenam=nam;
+						typei++;
+						item.setPartId(typei);
+						item.setPartName(typenam);
+						
+					}
+				}
+				sort("type");
 				addAdapterItem(data);
 				typebutton.setBackgroundColor(Color.rgb(135, 206, 235));
 				authorbutton.setBackgroundColor(Color.WHITE);
+				paperButton.setBackgroundColor(Color.WHITE);
 				importantbutton.setBackgroundColor(Color.WHITE);
+			}
+			
+		});
+		paperButton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				isPre=0;
+				ClassItem item=null;
+				String typenam="";
+				int typei=0;
+				for(int i=0;i<data.size();i++){
+					item=data.get(i);
+					String nam=item.getTitle();
+					if(nam.equals(typenam)){
+						item.setPartId(typei);
+						item.setPartName(typenam);
+					}
+					else{
+						typenam=nam;
+						typei++;
+						item.setPartId(typei);
+						item.setPartName(typenam);
+						
+					}
+				}
+				sort("paper");
+				addAdapterItem(data);
+				typebutton.setBackgroundColor(Color.WHITE);
+				authorbutton.setBackgroundColor(Color.WHITE);
+				importantbutton.setBackgroundColor(Color.WHITE);
+				paperButton.setBackgroundColor(Color.rgb(135, 206, 235));
 			}
 			
 		});
@@ -70,11 +138,20 @@ public class Papers_Fragment extends Fragment{
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				data.removeElementAt(0);
-				addAdapterItem(data);
+				isPre=1;
+				ClassItem item=null;
+				data2= new Vector<ClassItem>();
+				String typenam="";
+				for(int i=0;i<data.size();i++){
+					item=data.get(i);
+					if(item.isIfPrefered()){
+						data2.add(item);
+					}
+				}
+				addAdapterItem(data2);
 				typebutton.setBackgroundColor(Color.WHITE);
 				authorbutton.setBackgroundColor(Color.WHITE);
+				paperButton.setBackgroundColor(Color.WHITE);
 				importantbutton.setBackgroundColor(Color.rgb(135, 206, 235));
 			}
 			
@@ -84,6 +161,7 @@ public class Papers_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				isPre=0;
 				data.removeElementAt(0);
 				addAdapterItem(data);
 				
@@ -95,24 +173,70 @@ public class Papers_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				data.removeElementAt(0);
+				isPre=0;
+				ClassItem item=null;
+				String typenam="";
+				int typei=0;
+				for(int i=0;i<data.size();i++){
+					item=data.get(i);
+					String nam=item.getAuthor();
+					if(nam.equals(typenam)){
+						item.setPartId(typei);
+						item.setPartName(typenam);
+					}
+					else{
+						typenam=nam;
+						typei++;
+						item.setPartId(typei);
+						item.setPartName(typenam);
+						
+					}
+				}
+				sort("author");
 				addAdapterItem(data);
 				typebutton.setBackgroundColor(Color.WHITE);
+				paperButton.setBackgroundColor(Color.WHITE);
 				authorbutton.setBackgroundColor(Color.rgb(135, 206, 235));
 				importantbutton.setBackgroundColor(Color.WHITE);
 			}
 			
 		});
 	
-		ClassItem item1 = new ClassItem("SD-1","The Challenges of Emerging Software Eco-Systems (Keynote) ","Neil G. Siegel","Keynotes",1,"Keynotes");
-		ClassItem item2 = new ClassItem("SD-2","Low Ceremony Processes for Short Lifecycle Projects (Keynote) ","Anthony I. Wasserman","Keynotes",1,"Keynotes");
-		ClassItem item3 = new ClassItem("SD-3","How to Treat Timing Information for Software Effort Estimation? ","Masateru Tsunoda, Sousuke Amasaki, and Chris Lokan","Estimation",2,"Estimation");
-		ClassItem item4 = new ClassItem("SD-8"," qEstimation: A Process for Estimating Size and Effort of Software Testing ","Vu Nguyen, Vu Pham, and Vu Lam","Estimation",2,"Estimation");
-		ClassItem item5 = new ClassItem("SD-4","A Model for Estimating Agile Project Process and Schedule Acceleration ","Dan Ingold, Barry Boehm, and Supannika Koolmanojwong","Estimation",2,"Estimation");
-		ClassItem item6 = new ClassItem("SD-5"," A Discipline-Spanning Development Process for Self-Adaptive Mechatronic Systems ","Christian Heinzemann, Oliver Sudmann, Wilhelm Schäfer, and Matthias Tichy","Software Process I",3,"Software Process I");
-		ClassItem item7 = new ClassItem("SD-6","A Process Practice to Validate the Quality of Reused Component Documentation: A Case Study Involving Open-Source Components ","Olivier Gendreau and Pierre N. Robillard","Quality and Indicators",4,"Quality and Indicators");
-		ClassItem item8 = new ClassItem("SD-7","A Methodology to Derive Sustainability Indicators for Software Development Projects ","Giuseppe Lami, Fabrizio Fabbrini, and Mario Fusani","Quality and Indicators",4,"Quality and Indicators");
-	
+		/*ClassItem itemclass=null;
+		Paper p=null;
+		String typenam="";
+		int typei=0;
+		for(int i=0;i<papers.size();i++){
+			p=papers.get(i);
+			itemclass=new ClassItem(p.getMarkup(),p.getTitle(),p.getAuthor(),p.getType(),p.getConID(),1,p.getType(),false); 
+			if(p.getIfPrefered()==1){
+				itemclass.setIfPrefered(true);
+			}
+			String nam=p.getType();
+			if(nam.equals(typenam)){
+				itemclass.setPartId(typei);
+				itemclass.setPartName(typenam);
+			}
+			else{
+				typenam=nam;
+				typei++;
+				itemclass.setPartId(typei);
+				itemclass.setPartName(typenam);
+				
+			}
+			data.add(itemclass);
+			
+			
+		}*/
+		ClassItem item1 = new ClassItem("SD-1","The Challenges of Emerging Software Eco-Systems (Keynote) ","Neil G. Siegel","Keynotes","2",1,"Keynotes",false);
+		ClassItem item2 = new ClassItem("SD-2","Low Ceremony Processes for Short Lifecycle Projects (Keynote) ","Anthony I. Wasserman","Keynotes","2",1,"Keynotes",false);
+		ClassItem item3 = new ClassItem("SD-3","How to Treat Timing Information for Software Effort Estimation? ","Masateru Tsunoda, Sousuke Amasaki, and Chris Lokan","Estimation","2",2,"Estimation",false);
+		ClassItem item4 = new ClassItem("SD-4"," qEstimation: A Process for Estimating Size and Effort of Software Testing ","Vu Nguyen, Vu Pham, and Vu Lam","Estimation","3",2,"Estimation",false);
+		ClassItem item5 = new ClassItem("SD-5","A Model for Estimating Agile Project Process and Schedule Acceleration ","Dan Ingold, Barry Boehm, and Supannika Koolmanojwong","Estimation","4",2,"Estimation",false);
+		ClassItem item6 = new ClassItem("SD-6"," A Discipline-Spanning Development Process for Self-Adaptive Mechatronic Systems ","Christian Heinzemann, Oliver Sudmann, Wilhelm Sch채fer, and Matthias Tichy","Software Process I","2",3,"Software Process I",false);
+		ClassItem item7 = new ClassItem("SD-7","A Process Practice to Validate the Quality of Reused Component Documentation: A Case Study Involving Open-Source Components ","Olivier Gendreau and Pierre N. Robillard","Quality and Indicators","3",4,"Quality and Indicators",false);
+		ClassItem item8 = new ClassItem("SD-8","A Methodology to Derive Sustainability Indicators for Software Development Projects ","Giuseppe Lami, Fabrizio Fabbrini, and Mario Fusani","Quality and Indicators","4",4,"Quality and Indicators",false);
+		
 		data.addElement(item1);
 		data.addElement(item2);
 		data.addElement(item3);
@@ -138,6 +262,49 @@ public class Papers_Fragment extends Fragment{
 			
 		});
 	} 
+	private void sort(String ty){
+		Vector<ClassItem> data3 = new Vector<ClassItem>();
+		ClassItem tem=null;
+		if(ty.equals("paper")){
+			for(int i=0;i<data.size();i++){
+				tem=data.get(i);
+				for(int j=i;j<data.size();j++){
+					if(data.get(j).getTitle().charAt(0)<tem.getTitle().charAt(0)){
+						ClassItem tem2=data.get(j);
+						data.set(j, tem);
+						tem=tem2;
+					}
+				}
+				data.set(i, tem);
+			}
+		}
+		else if(ty.equals("type")){
+			for(int i=0;i<data.size();i++){
+				tem=data.get(i);
+				for(int j=i;j<data.size();j++){
+					if(data.get(j).getType().charAt(0)<tem.getType().charAt(0)){
+						ClassItem tem2=data.get(j);
+						data.set(j, tem);
+						tem=tem2;
+					}
+				}
+				data.set(i, tem);
+			}
+		}
+		else if(ty.equals("author")){
+			for(int i=0;i<data.size();i++){
+				tem=data.get(i);
+				for(int j=i;j<data.size();j++){
+					if(data.get(j).getAuthor().charAt(0)<tem.getAuthor().charAt(0)){
+						ClassItem tem2=data.get(j);
+						data.set(j, tem);
+						tem=tem2;
+					}
+				}
+				data.set(i, tem);
+			}
+		}
+	}
 
 	private void addAdapterItem(Vector<ClassItem> data){
 		Vector<ClassItem> classItem = new Vector<ClassItem>();
@@ -163,4 +330,3 @@ public class Papers_Fragment extends Fragment{
 		}
 	}
 }
-

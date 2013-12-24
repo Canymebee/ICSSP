@@ -1,6 +1,9 @@
 package myViews;
 import java.util.Vector;
+
+import com.activity.se_conference.Papers_Fragment;
 import com.activity.se_conference.R;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -65,8 +68,11 @@ public class ClassListAdapter extends BaseAdapter {
 	}
 
 
+//	@SuppressLint("NewApi")
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final ViewHolder holder;
+		final int a=position;
+		ClassItem classItem = items.get(position);
 		if (convertView == null) {
 			convertView = mInflater.inflate(R.layout.pages_class_part_lay, null);
 			holder = new ViewHolder();
@@ -84,16 +90,19 @@ public class ClassListAdapter extends BaseAdapter {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					if(isimportanted){
-						Drawable drawable = context.getResources().getDrawable(R.drawable.toimportant);
-						holder.important.setBackground(drawable);
-						isimportanted=false;
+					if(Papers_Fragment.isPre==0){
+						if(Papers_Fragment.data.get(a).isIfPrefered()){
+							Drawable drawable = context.getResources().getDrawable(R.drawable.toimportant);
+							holder.important.setBackground(drawable);
+							Papers_Fragment.data.get(a).setIfPrefered(false);
+						}
+						else{
+							Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
+							holder.important.setBackground(drawable);
+							Papers_Fragment.data.get(a).setIfPrefered(true);
+						}
 					}
-					else{
-						Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
-						holder.important.setBackground(drawable);
-						isimportanted=true;
-					}
+					
 					
 				}
 				
@@ -104,7 +113,7 @@ public class ClassListAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		ClassItem classItem = items.get(position);
+		
 		if(classItem != null){
 			if(classItem.getIfTop()){
 				holder.partLayout.setVisibility(View.VISIBLE);
@@ -113,6 +122,18 @@ public class ClassListAdapter extends BaseAdapter {
 				holder.title.setText(classItem.getTitle());
 				holder.author.setText(classItem.getAuthor());
 				holder.type.setText(classItem.getType());
+				if(Papers_Fragment.data.get(a).isIfPrefered()){
+					Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
+					holder.important.setBackgroundDrawable(drawable);
+				}
+				else{
+					Drawable drawable = context.getResources().getDrawable(R.drawable.toimportant);
+					holder.important.setBackgroundDrawable(drawable);
+				}
+				if(Papers_Fragment.isPre==1){
+					Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
+					holder.important.setBackgroundDrawable(drawable);
+				}
 			}else{
 				holder.partLayout.setVisibility(View.GONE);
 				holder.partName.setText(classItem.getPartName());
@@ -120,6 +141,18 @@ public class ClassListAdapter extends BaseAdapter {
 				holder.title.setText(classItem.getTitle());
 				holder.author.setText(classItem.getAuthor());
 				holder.type.setText(classItem.getType());
+				if(Papers_Fragment.data.get(a).isIfPrefered()){
+					Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
+					holder.important.setBackgroundDrawable(drawable);
+				}
+				else{
+					Drawable drawable = context.getResources().getDrawable(R.drawable.toimportant);
+					holder.important.setBackgroundDrawable(drawable);
+				}
+				if(Papers_Fragment.isPre==1){
+					Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
+					holder.important.setBackgroundDrawable(drawable);
+				}
 			}
 			
 		}

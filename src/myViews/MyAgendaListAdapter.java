@@ -7,6 +7,8 @@ import com.activity.se_conference.Agenda_Detial;
 import com.activity.se_conference.Pages_Details;
 import com.activity.se_conference.R;
 
+import data.Agenda;
+import data.TableManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -23,20 +25,25 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MyAgendaListAdapter extends BaseAdapter {
 	private Activity act;
 	private Context c;
-	private String statics;
 	private LayoutInflater mInflater;
-	private List<Map<String, Object>> mData;
-
-	public MyAgendaListAdapter(Context context, List<Map<String, Object>> mData) {
+	TableManager t;
+    private boolean statics;
+	private List<Agenda> mData;
+	
+		public MyAgendaListAdapter(Context context) {
 		c=context;
 		act=(Activity)context;
 		this.mInflater = LayoutInflater.from(context);
-		this.mData = mData;
+		t=new TableManager(context);
+		t.createAgendaTable();
+		mData=t.queryAgenda();
+//		t.deletTableAgenda();
 	}
 
 	@Override
@@ -54,12 +61,17 @@ public class MyAgendaListAdapter extends BaseAdapter {
 	@Override
 	public long getItemId(int position) {
 		// TODO Auto-generated method stub
-		return 0;
+		return position;
 	}
 
 //	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		final String id;
+		t=new TableManager(c);
+		t.createAgendaTable();
+		mData=t.queryAgenda();
+		
 		// TODO Auto-generated method stub
 		final ViewHolder holder;
 		if (convertView == null) {
@@ -81,7 +93,8 @@ public class MyAgendaListAdapter extends BaseAdapter {
 
 			holder = (ViewHolder) convertView.getTag();
 		}
-		if(mData.get(position).get("isTitle").toString()=="1"){
+		if(mData.get(position).isIs_title()==true){
+			id=mData.get(position).getId();
 //			RelativeLayout r = (RelativeLayout) convertView
 //					.findViewById(R.id.agenda_layout);
 //			Drawable drawable = act.getResources().getDrawable(R.drawable.img01);
@@ -91,7 +104,7 @@ public class MyAgendaListAdapter extends BaseAdapter {
 			holder.time.setVisibility(View.GONE);
 			holder.address.setVisibility(View.GONE);
 			holder.viewBtn.setVisibility(View.GONE);
-			holder.title.setText((String) mData.get(position).get("title"));
+			holder.title.setText((String) mData.get(position).getTitle());
 			holder.title.setTextColor(c.getResources().getColor(R.color.my_dark));
 		    TextPaint tp = holder.title.getPaint();   
 		    tp.setFakeBoldText(false); 
@@ -100,7 +113,9 @@ public class MyAgendaListAdapter extends BaseAdapter {
 		}else{
 //			RelativeLayout r = (RelativeLayout) convertView
 //					.findViewById(R.id.agenda_layout);
-			convertView.setBackgroundColor(Color.WHITE);
+			id=mData.get(position).getId();
+//			convertView.setBackgroundColor(Color.WHITE);
+			convertView.setBackgroundColor(c.getResources().getColor(R.color.Light_Grey));
 		    holder.addBtn.setVisibility(View.VISIBLE);
 			holder.time.setVisibility(View.VISIBLE);
 			holder.address.setVisibility(View.VISIBLE);
@@ -109,34 +124,39 @@ public class MyAgendaListAdapter extends BaseAdapter {
 			holder.title.setTextColor(c.getResources().getColor(R.color.my_grey));
 			TextPaint tp = holder.title.getPaint();   
 		    tp.setFakeBoldText(true); 
-			statics = mData.get(position).get("isSelected").toString();
-			if (statics == "0") {
+			statics = mData.get(position).isIs_selected();
+			if (!statics) {
 				Drawable drawable = convertView.getResources().getDrawable(R.drawable.toimportant);
-//				holder.addBtn.setBackground(drawable);
 				holder.addBtn.setBackgroundDrawable(drawable);
-			} else if(statics=="1"){
+				
+			} else {
 				Drawable drawable = c.getResources().getDrawable(R.drawable.importanted);
-//				holder.addBtn.setBackground();
 				holder.addBtn.setBackgroundDrawable(drawable);
 			}
 
-			holder.title.setText((String) mData.get(position).get("title"));
-			holder.time.setText((String) mData.get(position).get("time"));
-			holder.address.setText((String) mData.get(position).get("address"));
+			holder.title.setText((String) mData.get(position).getTitle());
+			holder.time.setText((String) mData.get(position).getTime());
+			holder.address.setText((String) mData.get(position).getAddress());
 			holder.addBtn.setOnClickListener(new View.OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					if (statics == "0") {
+//					Toast.makeText(c,   
+//	                        id,   
+//	                        Toast.LENGTH_SHORT).show();  
+	           
+					if (!statics) {
 						Drawable drawable = c.getResources().getDrawable(R.drawable.importanted);
 //						holder.addBtn.setBackground(drawable);
 						holder.addBtn.setBackgroundDrawable(drawable);
-						statics = "1";
-					} else if(statics=="1"){
+						statics = true;
+						t.updateAgenda(id, "1");
+					} else {
 						Drawable drawable = c.getResources().getDrawable(R.drawable.toimportant);
 //						holder.addBtn.setBackground(drawable);
 						holder.addBtn.setBackgroundDrawable(drawable);
-						statics = "0";
+						statics = false;
+						t.updateAgenda(id, "0");
 					}
 				}
 			});
@@ -145,6 +165,7 @@ public class MyAgendaListAdapter extends BaseAdapter {
 				@Override
 				public void onClick(View v) {
 					 Intent intent=new Intent(act,Agenda_Detial.class);
+					 intent.putExtra("id", id);
 					act.startActivity(intent);
 				}
 			});

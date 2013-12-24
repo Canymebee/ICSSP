@@ -3,6 +3,22 @@ package myViews;
 import java.io.Serializable;
 
 public class ClassItem implements Serializable{
+	public String getConID() {
+		return conID;
+	}
+
+	public void setConID(String conID) {
+		this.conID = conID;
+	}
+
+	public boolean isIfPrefered() {
+		return ifPrefered;
+	}
+
+	public void setIfPrefered(boolean ifPrefered) {
+		this.ifPrefered = ifPrefered;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -35,26 +51,30 @@ public class ClassItem implements Serializable{
 	}
 	private static final long serialVersionUID = 1L;
 	
+	private String markup = "";
 	private String title = "";
-	private int partId = 0;
-	private String partName = "";
 	private String author = "";
 	private String type = "";
-	private String markup = "";
+	private String conID = "";
+	private int partId = 0;
+	private String partName = "";
+	private boolean ifPrefered = false;
 	private boolean ifTop = false;
 	
 	public ClassItem() {
 		super();
 	}
 	
-	public ClassItem(String markup,String title,String author,String type, int partId,String partName) {
+	public ClassItem(String markup,String title,String author,String type,String conID, int partId,String partName,boolean ifPrefered) {
 		super();
 		this.markup=markup;
 		this.title = title;
 		this.partId = partId;
 		this.author=author;
 		this.type=type;
+		this.conID=conID;
 		this.partName = partName;
+		this.ifPrefered=ifPrefered;
 	}
 	public int getPartId() {
 		return partId;

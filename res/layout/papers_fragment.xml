@@ -5,28 +5,37 @@
     android:orientation="vertical" >
     <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
 	    android:orientation="horizontal">
          <EditText
 			android:layout_width="fill_parent" android:layout_weight="1"
 			android:id="@+id/searchInput"
-			android:layout_height="fill_parent"
+			android:layout_height="31dp"
 			android:layout_marginTop="2dp"
 			android:layout_marginLeft="20.0dp"
 			android:layout_marginRight="10.0dip"
 			android:radius="5dip"
+			android:textSize="12sp"
 		    android:layout_gravity="center_vertical|center_horizontal"
 			android:text=""></EditText>
-         <Button
-			android:layout_width="fill_parent" android:layout_weight="2"
+            <LinearLayout 
+		    android:layout_width="fill_parent" android:layout_weight="5"
+			android:orientation="vertical"
+			android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical|center_horizontal"
+			>
+		    <Button
+			android:layout_width="wrap_content"
 			android:id="@+id/searchButton"
-			android:layout_height="fill_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginRight="10.0dip"
-			android:background="@drawable/buttonstyle"
-            android:layout_gravity="center_vertical|center_horizontal"
-			android:text="search"></Button>
+			android:background="@drawable/serch"
+		    android:layout_gravity="center_vertical|center_horizontal"
+			></Button>
+		</LinearLayout>
+        
     </LinearLayout>
     <LinearLayout 
         android:layout_width="match_parent"
@@ -41,21 +50,28 @@
 			android:layout_height="fill_parent"
 			android:background="@drawable/button2"
 		    android:layout_gravity="center_vertical|center_horizontal"
-			android:text="  type order  "></Button>
+			android:text="  type  "></Button>
+         <Button
+			android:layout_width="wrap_content"
+			android:id="@+id/paperbutton"
+			android:layout_height="fill_parent"
+			android:background="@drawable/button2"
+		    android:layout_gravity="center_vertical|center_horizontal"
+			android:text="  paper  "></Button>
          <Button
 			android:layout_width="wrap_content"
 			android:id="@+id/authorbutton"
 			android:layout_height="fill_parent"
             android:background="@drawable/button2"		    
             android:layout_gravity="center_vertical|center_horizontal"
-			android:text="  author order  "></Button>
+			android:text="  author  "></Button>
          <Button
 			android:layout_width="wrap_content"
 			android:id="@+id/importantbutton"
 			android:layout_height="fill_parent"
 			android:background="@drawable/button2"
 		    android:layout_gravity="center_vertical|center_horizontal"
-			android:text="  important  "></Button>
+			android:text="  prefer  "></Button>
     </LinearLayout>
     <LinearLayout 
         android:layout_width="match_parent"
