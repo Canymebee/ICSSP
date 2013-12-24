@@ -219,7 +219,7 @@ public class Info_Fragment extends Fragment{
 			}					
 			else{
 				holder.text = (TextView) convertView.findViewById(R.id.text);
-				convertView.setBackgroundColor(android.graphics.Color.parseColor("#33b5e5"));
+				convertView.setBackgroundColor(android.graphics.Color.parseColor("#87CEEB"));
 			}
 			holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 			convertView.setTag(holder);
@@ -232,11 +232,11 @@ public class Info_Fragment extends Fragment{
 						.getPaddingTop(), 15, 15);
 				holder.text.setText(mfilelist.get(position).getOutlineTitle());
 				if (mfilelist.get(position).isMhasChild()
-						&& (mfilelist.get(position).isExpanded() == false)) {
-					//holder.icon.setImageBitmap(mIconCollapse);
+						&& (mfilelist.get(position).isExpanded() == false)&& mfilelist.get(position).getOutlineTitle().equals("Hotel Information")) {
+					holder.icon.setImageBitmap(mIconCollapse);
 				} else if (mfilelist.get(position).isMhasChild()
-						&& (mfilelist.get(position).isExpanded() == true)) {
-					//holder.icon.setImageBitmap(mIconExpand);
+						&& (mfilelist.get(position).isExpanded() == true)&& mfilelist.get(position).getOutlineTitle().equals("Hotel Information")) {
+					holder.icon.setImageBitmap(mIconExpand);
 				} else if (!mfilelist.get(position).isMhasChild()){
 					holder.icon.setImageBitmap(mIconCollapse);
 					holder.icon.setVisibility(View.INVISIBLE);
